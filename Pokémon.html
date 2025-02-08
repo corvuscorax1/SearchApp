@@ -15,24 +15,29 @@
       <h1>Pokémon Search App</h1>
     </header>
     <div class="search-container">
-      <label for="search">Search for Pokémon Name or ID:</label>
+      <label for="search-input">Search for Pokémon Name or ID:</label>
       <div class="search-box">
-        <input type="text" id="search" placeholder="Enter name or ID">
-        <button>Search</button>
+        <input type="text" id="search-input" placeholder="Enter name or ID" required>
+        <button id="search-button">Search</button>
       </div>
     </div>
     <div class="results-container">
-      <div class="stats-header">
-        <span>Base</span>
-        <span>Stats</span>
+      <!-- Pokémon Details -->
+      <div class="pokemon-details">
+        <p><strong></strong> <span id="pokemon-name"></span></p>
+        <p><strong></strong> <span id="pokemon-id"></span></p>
+        <p><strong></strong> <span id="weight"></span></p>
+        <p><strong></strong> <span id="height"></span></p>
+        <p><strong></strong> <span id="types"></span></p>
       </div>
+      <!-- Base Stats -->
       <div class="stats">
-        <div>HP:</div><div></div>
-        <div>Attack:</div><div></div>
-        <div>Defense:</div><div></div>
-        <div>Sp. Attack:</div><div></div>
-        <div>Sp. Defense:</div><div></div>
-        <div>Speed:</div><div></div>
+        <div>HP:</div><div id="hp"></div>
+        <div>Attack:</div><div id="attack"></div>
+        <div>Defense:</div><div id="defense"></div>
+        <div>Sp. Attack:</div><div id="special-attack"></div>
+        <div>Sp. Defense:</div><div id="special-defense"></div>
+        <div>Speed:</div><div id="speed"></div>
       </div>
     </div>
   </div>
