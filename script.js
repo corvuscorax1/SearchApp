@@ -64,17 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayPokemonSprite(spriteUrl) {
-        let spriteImg = document.getElementById("sprite");
-
-        // If the image doesn't exist yet, create it
-        if (!spriteImg) {
-            spriteImg = document.createElement("img");
-            spriteImg.id = "sprite";
-            spriteImg.alt = "Pokémon sprite";
-            document.querySelector(".results-container").prepend(spriteImg); // Add it at the top
-        }
-
-        // Update the sprite source
+        const spriteImg = document.getElementById("sprite");
+        
+        // Update the sprite source and make it visible
         spriteImg.src = spriteUrl;
+        spriteImg.style.display = "block"; 
     }
 });
