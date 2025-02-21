@@ -22,15 +22,21 @@
       </div>
     </div>
     <div class="results-container">
+
       <!-- Pokémon Details -->
       <div class="pokemon-details">
-        <p><strong></strong> <span id="pokemon-name"></span></p>
-        <p><strong></strong> <span id="pokemon-id"></span></p>
-        <img id="sprite" alt="Pokémon sprite" style="display: none;"/> 
-        <p><strong></strong> <span id="weight"></span></p>
-        <p><strong></strong> <span id="height"></span></p>
-        <p><strong></strong> <span id="types"></span></p>
-      </div>
+          <div class="name-id">
+            <p><strong></strong> <span id="pokemon-name"></span></p>
+            <p><strong></strong> <span id="pokemon-id"></span></p>
+          </div>
+          <img id="sprite" alt="Pokémon sprite" style="display: none;"/> 
+          <div class="weight-height">
+            <p><strong></strong> <span id="weight"></span></p>
+            <p><strong></strong> <span id="height"></span></p>
+          </div>
+          <p><strong></strong> <span id="types"></span></p>
+        </div>
+
       <!-- Base Stats -->
       <div class="stats">
         <div>HP:</div><div id="hp"></div>
@@ -40,8 +46,10 @@
         <div>Sp. Defense:</div><div id="special-defense"></div>
         <div>Speed:</div><div id="speed"></div>
       </div>
+      
     </div>
   </div>
+
 </body>
 <!-- Java Script -->
 <script src="./script.js"></script>
