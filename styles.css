@@ -101,7 +101,10 @@ button:hover {
 #sprite {
   display: block;
   margin: 12px auto;
-  width: 96px;
+  width: 125px; /* Fixed width */
+  height: 125px; /* Fixed height to maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area without distorting */
+  border-radius: 8px; /* Optional: Adds rounded corners */
 }
 
 /* Type Badge */
