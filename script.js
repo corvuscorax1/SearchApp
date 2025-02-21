@@ -58,5 +58,23 @@ document.addEventListener("DOMContentLoaded", function () {
         const typeElement = document.createElement("span");
         typeElement.textContent = data.types[0].type.name.toUpperCase();
         typesContainer.appendChild(typeElement);
+
+        // Display Pokémon sprite
+        displayPokemonSprite(data.sprites.front_default);
+    }
+
+    function displayPokemonSprite(spriteUrl) {
+        let spriteImg = document.getElementById("sprite");
+
+        // If the image doesn't exist yet, create it
+        if (!spriteImg) {
+            spriteImg = document.createElement("img");
+            spriteImg.id = "sprite";
+            spriteImg.alt = "Pokémon sprite";
+            document.querySelector(".results-container").prepend(spriteImg); // Add it at the top
+        }
+
+        // Update the sprite source
+        spriteImg.src = spriteUrl;
     }
 });
