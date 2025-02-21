@@ -73,6 +73,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 230px; /* Set a minimum height to keep it consistent */
+  transition: min-height 0.3s ease; /* Smooth transition for height change */
 }
 
 /* Flexbox for name and ID */
