@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (searchValue === "red") {
             alert("Pokémon not found");
-            return; // Stop further execution
+            return; // Stop execution for "Red"
         }
 
         fetchPokemon(searchValue);
@@ -32,13 +32,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayPokemonData(data) {
-        document.getElementById("pokemon-name").textContent = `Name: ${data.name}`;
-        document.getElementById("pokemon-id").textContent = `ID: ${data.id}`;
+        // Convert Pokémon name to uppercase
+        document.getElementById("pokemon-name").textContent = data.name.toUpperCase();
+
+        // ID can be displayed as "#ID" or just ID
+        document.getElementById("pokemon-id").textContent = `#${data.id}`;
+
+        // Weight and Height should follow "Weight: X" or just "X"
         document.getElementById("weight").textContent = `Weight: ${data.weight}`;
         document.getElementById("height").textContent = `Height: ${data.height}`;
-        document.getElementById("types").textContent = 
-            `Type: ${data.types.map(typeInfo => typeInfo.type.name).join(", ")}`;
 
+        // Base Stats - Exact order as required
         document.getElementById("hp").textContent = data.stats[0].base_stat;
         document.getElementById("attack").textContent = data.stats[1].base_stat;
         document.getElementById("defense").textContent = data.stats[2].base_stat;
