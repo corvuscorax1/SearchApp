@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayPokemonData(data) {
         // Convert Pokémon name to uppercase
         document.getElementById("pokemon-name").textContent = data.name.toUpperCase();
-
+    
         // ID format as "#ID"
         document.getElementById("pokemon-id").textContent = `#${data.id}`;
-
+    
         // Weight and Height formatted
         document.getElementById("weight").textContent = `Weight: ${data.weight}`;
         document.getElementById("height").textContent = `Height: ${data.height}`;
-
+    
         // Base Stats - Exact order
         document.getElementById("hp").textContent = data.stats[0].base_stat;
         document.getElementById("attack").textContent = data.stats[1].base_stat;
@@ -49,20 +49,22 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("special-attack").textContent = data.stats[3].base_stat;
         document.getElementById("special-defense").textContent = data.stats[4].base_stat;
         document.getElementById("speed").textContent = data.stats[5].base_stat;
-
+    
         // Clear previous type data
         const typesContainer = document.getElementById("types");
         typesContainer.innerHTML = ""; 
-
-        // Create a single element containing the type in uppercase
-        const typeElement = document.createElement("span");
-        typeElement.textContent = data.types[0].type.name.toUpperCase();
-        typesContainer.appendChild(typeElement);
-
+    
+        // Loop through types and create elements
+        data.types.forEach(type => {
+            const typeElement = document.createElement("span");
+            typeElement.textContent = type.type.name.toUpperCase();
+            typesContainer.appendChild(typeElement);
+        });
+    
         // Display Pokémon sprite
         displayPokemonSprite(data.sprites.front_default);
     }
-
+    
     function displayPokemonSprite(spriteUrl) {
         const spriteImg = document.getElementById("sprite");
         
