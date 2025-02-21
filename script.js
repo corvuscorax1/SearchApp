@@ -1,3 +1,24 @@
+const typeColors = {
+    normal: "#A8A878",
+    fire: "#F08030",
+    water: "#6890F0",
+    grass: "#78C850",
+    electric: "#F8D030",
+    ice: "#98D8D8",
+    fighting: "#C03028",
+    poison: "#A040A0",
+    ground: "#E0C068",
+    flying: "#A890F0",
+    psychic: "#F85888",
+    bug: "#A8B820",
+    rock: "#B8A038",
+    ghost: "#705898",
+    dragon: "#7038F8",
+    dark: "#705848",
+    steel: "#B8B8D0",
+    fairy: "#F0B0E0",
+};
+
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("search-input");
     const searchButton = document.getElementById("search-button");
@@ -55,9 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
         typesContainer.innerHTML = ""; 
     
         // Loop through types and create elements
-        data.types.forEach(type => {
+        data.types.forEach(typeInfo => {
             const typeElement = document.createElement("span");
-            typeElement.textContent = type.type.name.toUpperCase();
+            typeElement.textContent = typeInfo.type.name.toUpperCase();
+            typeElement.style.backgroundColor = typeColors[typeInfo.type.name] || "#ccc"; // Default to gray if not found
             typesContainer.appendChild(typeElement);
         });
     
