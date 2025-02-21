@@ -35,19 +35,28 @@ document.addEventListener("DOMContentLoaded", function () {
         // Convert Pokémon name to uppercase
         document.getElementById("pokemon-name").textContent = data.name.toUpperCase();
 
-        // ID can be displayed as "#ID" or just ID
+        // ID format as "#ID"
         document.getElementById("pokemon-id").textContent = `#${data.id}`;
 
-        // Weight and Height should follow "Weight: X" or just "X"
+        // Weight and Height formatted
         document.getElementById("weight").textContent = `Weight: ${data.weight}`;
         document.getElementById("height").textContent = `Height: ${data.height}`;
 
-        // Base Stats - Exact order as required
+        // Base Stats - Exact order
         document.getElementById("hp").textContent = data.stats[0].base_stat;
         document.getElementById("attack").textContent = data.stats[1].base_stat;
         document.getElementById("defense").textContent = data.stats[2].base_stat;
         document.getElementById("special-attack").textContent = data.stats[3].base_stat;
         document.getElementById("special-defense").textContent = data.stats[4].base_stat;
         document.getElementById("speed").textContent = data.stats[5].base_stat;
+
+        // Clear previous type data
+        const typesContainer = document.getElementById("types");
+        typesContainer.innerHTML = ""; 
+
+        // Create a single element containing the type in uppercase
+        const typeElement = document.createElement("span");
+        typeElement.textContent = data.types[0].type.name.toUpperCase();
+        typesContainer.appendChild(typeElement);
     }
 });
